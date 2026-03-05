@@ -1,4 +1,4 @@
-# weex-api-agent
+# weex-trader-skill
 
 Use this skill in Codex to automate WEEX **contract** and **spot** tasks with natural language.
 
@@ -11,13 +11,13 @@ Use this skill in Codex to automate WEEX **contract** and **spot** tasks with na
 In Codex, ask directly in natural language:
 
 ```text
-Help me install this skill: https://github.com/drgnchan/weex-contract-api-agent
+Help me install this skill: https://github.com/drgnchan/weex-trader-skill
 ```
 
 Then verify:
 
 ```text
-Check whether $weex-api-agent is installed.
+Check whether $weex-trader-skill is installed.
 ```
 
 ## One-Time Setup (for private actions)
@@ -45,20 +45,20 @@ export WEEX_LOCALE="en-US"
 
 ## How to Use This Skill in Codex
 
-Mention `$weex-api-agent` and describe what you want in plain English.
+Mention `$weex-trader-skill` and describe what you want in plain English.
 
 Example prompts:
 
 ```text
-Use $weex-api-agent to get the latest BTCUSDT spot ticker and explain the result.
+Use $weex-trader-skill to get the latest BTCUSDT spot ticker and explain the result.
 ```
 
 ```text
-Use $weex-api-agent to place a contract limit short on ETHUSDT, size 0.001 at 10000.
+Use $weex-trader-skill to place a contract limit short on ETHUSDT, size 0.001 at 10000.
 ```
 
 ```text
-Use $weex-api-agent to cancel my open ETHUSDT contract orders.
+Use $weex-trader-skill to cancel my open ETHUSDT contract orders.
 ```
 
 Notes:
@@ -68,6 +68,6 @@ Notes:
 
 ## Troubleshooting
 
-- `Skill not found`: ask Codex to reinstall the skill and verify `$weex-api-agent` is available.
+- `Skill not found`: ask Codex to reinstall the skill and verify `$weex-trader-skill` is available.
 - `Authentication/signature error`: re-check `WEEX_API_KEY`, `WEEX_API_SECRET`, `WEEX_API_PASSPHRASE`, and `WEEX_API_BASE`.
 - `Order rejected (balance/permission)`: verify account balance, API key permissions, and market/symbol.

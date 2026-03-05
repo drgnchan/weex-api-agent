@@ -1,11 +1,11 @@
 ---
-name: weex-api-agent
+name: weex-trader-skill
 description: Use when the user wants WEEX API automation via REST for both contract and spot, including order execution from natural language, cancel/query, and market/account data retrieval.
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
-# WEEX API Agent
+# WEEX Trader Skill
 
 Use:
 - `scripts/weex_contract_api.py` for contract
@@ -59,7 +59,7 @@ python3 scripts/weex_spot_api.py place-order \
 
 ## Updates
 
-Publish updates as GitHub Releases with asset `weex-api-agent.skill`.
+Publish updates as GitHub Releases with asset `weex-trader-skill.skill`.
 
 Users can check/apply updates:
 

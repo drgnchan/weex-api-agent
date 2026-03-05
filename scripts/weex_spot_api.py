@@ -90,7 +90,7 @@ class WeexSpotClient:
         api_key: Optional[str],
         api_secret: Optional[str],
         api_passphrase: Optional[str],
-        user_agent: str = "weex-spot-api-agent/1.0",
+        user_agent: str = "weex-trader-skill-spot/1.0",
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout

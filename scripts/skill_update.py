@@ -64,7 +64,7 @@ def get_local_version(skill_dir: Path) -> str:
 def github_api_get(url: str, token: Optional[str]) -> Dict[str, Any]:
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "weex-contract-api-agent-updater/1.0",
+        "User-Agent": "weex-trader-skill-updater/1.0",
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -102,7 +102,7 @@ def fetch_latest_release(repo: str, asset_name: str, token: Optional[str]) -> Di
 
 
 def download_file(url: str, out_file: Path, token: Optional[str]) -> None:
-    headers = {"User-Agent": "weex-contract-api-agent-updater/1.0"}
+    headers = {"User-Agent": "weex-trader-skill-updater/1.0"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, headers=headers)
@@ -170,12 +170,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_check = sub.add_parser("check", help="Check latest GitHub release vs local version")
     p_check.add_argument("--repo", required=True, help="owner/repo")
-    p_check.add_argument("--asset-name", default="weex-contract-api-agent.skill")
+    p_check.add_argument("--asset-name", default="weex-trader-skill.skill")
     p_check.add_argument("--token", default=os.getenv("GITHUB_TOKEN"))
 
     p_update = sub.add_parser("update", help="Download and install latest skill from GitHub release")
     p_update.add_argument("--repo", required=True, help="owner/repo")
-    p_update.add_argument("--asset-name", default="weex-contract-api-agent.skill")
+    p_update.add_argument("--asset-name", default="weex-trader-skill.skill")
     p_update.add_argument("--token", default=os.getenv("GITHUB_TOKEN"))
     p_update.add_argument("--install-dir", default=None, help="Defaults to parent of --skill-dir")
 
