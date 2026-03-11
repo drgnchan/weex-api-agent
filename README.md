@@ -1,6 +1,6 @@
 # weex-trader-skill
 
-Use this skill in Codex to automate WEEX **contract** and **spot** tasks with natural language.
+Use this skill in Codex to automate WEEX **futures** and **spot** tasks with natural language.
 
 - Get market data
 - Check account/position data
@@ -78,21 +78,31 @@ Use $weex-trader-skill to get the latest BTCUSDT spot ticker and explain the res
 ```
 
 ```text
-Use $weex-trader-skill to place a contract limit short on ETHUSDT, size 0.001 at 10000.
+Use $weex-trader-skill to place a futures limit short on ETHUSDT, size 0.001 at 10000.
 ```
 
 Current local wrappers target the latest documented V3 order endpoints:
-- Contract: `POST /capi/v3/order`
+- Futures: `POST /capi/v3/order`
 - Spot: `POST /api/v3/order`
 
 ```text
-Use $weex-trader-skill to cancel my open ETHUSDT contract orders.
+Use $weex-trader-skill to cancel my open ETHUSDT futures orders.
 ```
 
 Notes:
 - You do not need to provide exchange-specific numeric fields.
 - Codex converts your intent into structured request arguments.
 - If required fields are missing, Codex asks only for missing fields.
+
+## Module quick-reference
+
+- `Spot`: spot trading module for public market data and private spot actions, including ticker lookup, account balance, open orders, trade history, and spot order placement/cancel flows.
+- `Futures`: futures trading module for perp-style workflows, including market data, account config, balance, positions, leverage/margin settings, and futures order placement/cancel flows.
+- `Market data`: public read-only queries across spot and futures, such as server time, ticker, depth, trades, and kline-style price history. No API credentials are required.
+- `Account & positions`: private account state queries, including balances, permissions, commissions, open positions, margin mode, leverage, and bill/income-style history. API credentials are required.
+- `Order execution`: mutating trading operations for both spot and futures. Live order placement and cancel actions require explicit confirmation via `--confirm-live`.
+- `Affiliate / rebate`: spot-side affiliate and channel endpoints are included for referral verification, commission queries, rebate records, and related internal withdrawal workflows.
+
 
 ## Troubleshooting
 
@@ -102,7 +112,7 @@ Notes:
 
 ## Regenerate Definitions
 
-To rebuild local spot and contract REST definitions from the current WEEX V3 docs:
+To rebuild local spot and futures REST definitions from the current WEEX V3 docs:
 
 ```bash
 python3 scripts/generate_weex_api_definitions.py --product all
