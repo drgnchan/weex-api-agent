@@ -7,10 +7,31 @@ Use this skill in Codex to automate WEEX **contract** and **spot** tasks with na
 - Place, cancel, and query orders
 
 ## Get API Credentials
-All integrations need a Weex API key for private endpoints (account, trading). Public market data works without credentials.
-1. Log in to www.weex.com → Account Center → API Management
-2. Create a new API key — select Read and/or Trade permissions
-3. Save your API Key, Secret Key, and Passphrase
+
+Access to private endpoints (such as account and trading APIs) requires a Weex API Key.Public market data endpoints are available without authentication.
+
+### Create an API Key
+
+1. Go to [API Management](https://www.weex.com/account/newapi/)
+2. Create a new API key
+3. Select the required permissions:
+  - Read
+  - Trade
+
+### Important
+
+Make sure to securely store the following credentials:
+
+- API Key
+- Secret Key
+- Passphrase
+
+These credentials are required to authenticate API requests.
+
+### Security Notice
+
+Never share your **Secret Key** or **Passphrase**.
+Anyone with these credentials can control your account.
 
 ## Install in Codex
 
