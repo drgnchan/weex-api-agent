@@ -14,9 +14,6 @@ Access to private endpoints (such as account and trading APIs) requires a Weex A
 
 1. Go to [API Management](https://www.weex.com/account/newapi/)
 2. Create a new API key
-3. Select the required permissions:
-  - Read
-  - Trade
 
 ### Important
 
